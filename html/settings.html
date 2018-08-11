@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/setting-styles.css">
+	<script type="text/javascript" src="../js/settings.js" async></script>
+	<title>Settings</title>
+</head>
+<body>
+	<a href='index.html'><img class="home-icon" src="../img/home.png" alt="home"/></a>
+	<div class="settings">
+		<div>
+			<h3>Current Name: <span id="current-name"> </span></h3>
+			<input type='text' id="name-input">
+			<button id="change-name" onclick="changeSetting('name')">Submit</button>
+		</div>
+		<div>
+			<h3>Current Zip Code: <span id="current-zip"> </span></h3>
+			<input type='text' id="zip-input">
+			<button id="change-zip" onclick="changeSetting('zip')">Submit</button>
+		</div>
+
+	</div>
+
+</body>
+</html>

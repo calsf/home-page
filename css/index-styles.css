@@ -1,0 +1,30 @@
+.settings-icon {
+	max-width: 30px;
+	height: auto;
+	float: right;
+}
+
+.hide {
+	display: none;
+}
+
+.greeting {
+	padding-top: 40px;
+	text-align: center;
+	font-size: 50px;
+}
+
+#weather-container {
+	text-align: center;
+	font-size: 30px;
+}
+
+#name-input {
+	font-size: 20px;
+	text-align: center;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: 1px solid black;
+	outline: none;
+}
