@@ -28,3 +28,52 @@
 	border-bottom: 1px solid black;
 	outline: none;
 }
+
+.link-header-container {
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 175px;
+	height: auto;
+}
+
+.link-header {
+	cursor: default;
+	margin: 0px 10px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#show-link {
+	cursor: pointer;
+	user-select: none;
+}
+
+#quick-links {
+	max-width: 800px;
+	text-align: center;
+}
+
+.link-container {
+	display: inline-flex;
+}
+
+#link-input-div {
+	padding: 5px;
+}
+
+.link-inputfield {
+	margin: 5px 3px;
+	font-size: 15px;
+	float: left;
+}
+
+.add-link-button {
+	margin: 3px;
+	border-radius: 5px;
+	cursor: pointer;
+	float: left;
+}
+
+.link {
+	padding: 10px 0;
+}
