@@ -1,4 +1,6 @@
 namePrompt();
+
+//add eventlistener for when user hits enter key to enter name
 document.getElementById('name-input').addEventListener("keyup", function(event) {
 	if(event.keyCode === 13) 
 	{
@@ -6,6 +8,7 @@ document.getElementById('name-input').addEventListener("keyup", function(event) 
 	}
 })
 
+//shows a greeting message based on whether or not a name has been stored
 function namePrompt()
 {
 	let greet = document.getElementById('greet-text');
@@ -13,6 +16,7 @@ function namePrompt()
 }
 
 
+//greet message shown when a name has been stored
 function showGreeting()
 {
 	const input = document.getElementById('name-input-div');
@@ -30,6 +34,7 @@ function showGreeting()
 	}
 }
 
+//enter and store name into local storage
 function enterName()
 {
 	const input = document.getElementById('name-input').value;
@@ -39,6 +44,7 @@ function enterName()
 	namePrompt();
 }
 
+//checks if a name is stored in local storage
 function nameCheck() {
 	let name = localStorage.getItem('name');
 	return name === null;

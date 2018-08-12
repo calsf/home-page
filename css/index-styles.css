@@ -28,3 +28,93 @@
 	border-bottom: 1px solid black;
 	outline: none;
 }
+
+.link-header-container {
+	display: flex;
+	justify-content: center;
+}
+
+.link-header {
+	cursor: default;
+	margin: 0px 10px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+#show-link {
+	cursor: pointer;
+	user-select: none;
+}
+
+.link-container {
+	display: flex;
+	justify-content: center;
+}
+
+#link-input-div {
+	padding: 5px;
+}
+
+.link-inputfield {
+	margin: 5px 3px;
+	font-size: 15px;
+	width: 90%;
+}
+
+.add-link-button {
+	margin: 3px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.link {
+	font-size: 18px;
+	padding: 5px 10px;
+}
+
+.notepad-div {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.editor-options{
+	cursor: pointer;
+	max-width: 20px;
+	height: auto;
+	float: right;
+	padding: 0 3px;
+}
+
+.editor-selected{
+	background-color: grey;
+}
+
+.font-size-select{
+	float: right;
+	padding: 0 4px;
+}
+
+/*all a with parent of div*/
+div > a {
+	text-decoration: none;
+	color: blue;
+}
+
+#notepad {
+	font-size: 12px;
+	width: 500px;
+	height: 450px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}

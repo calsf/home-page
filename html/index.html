@@ -5,10 +5,48 @@
 	<script type="text/javascript" src="../js/key.js"></script>
 	<script type="text/javascript" src="../js/weather.js" async></script>
 	<script type="text/javascript" src="../js/greeting.js" async></script>
-	<title>HOME</title>
+	<script type="text/javascript" src="../js/links.js" async></script>
+	<script type="text/javascript" src="../js/notepad.js" async></script>
+	<title>Home</title>
 </head>
 <body>
 	<a href='settings.html'><img class="settings-icon" src="../img/cogwheel.png" alt="settings"/></a>
+	
+	<div class="link-header-container">
+		<div class='link-header'>
+			<p>Quick Links <span id="show-link" onclick="showLinkInputs()">+</span></p>
+		</div>
+		<div id='link-input-div' class='hide'>
+			<div>
+				<input id='link-input-name' class='link-inputfield' type='text' placeholder="Name of link"> <input id='link-input-url' class='link-inputfield' type='text' placeholder="URL">
+			</div>
+			<div>
+				<button class='add-link-button' onclick="addLink()">Add Link</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="link-container">
+			<div class='link hide'>
+				<a id='link1'></a>
+			</div>
+			<div class='link hide'>
+				<a id='link2'></a>
+			</div>
+			<div class='link hide'>
+				<a id='link3'></a>
+			</div>
+			<div class='link hide'>
+				<a id='link4'></a>
+			</div>
+			<div class='link hide'>
+				<a id='link5'></a>
+			</div>
+			<div class='link hide'>
+				<a id='link6'></a>
+			</div>
+	</div>
+
 	<div class="greeting">
 		<p id='greet-text'></p>
 		<div id="name-input-div">
@@ -20,6 +58,47 @@
 		<p id="temp" class='hide'>&#8457;</p>
 		<p id="weather"></p>
 	</div>
+
+
+
+	<div class='notepad-div'>
+		<div>
+			<p>NOTEPAD
+				<span>
+					<img class='editor-options' src='../img/save.png' alt="save" onclick="save()">
+					<img id= 'underline' class='editor-options' src='../img/underline.png' alt="save" onclick="styleSelected('underline')">
+					<img id='italic' class='editor-options' src='../img/italics.png' alt="save" onclick="styleSelected('italic')">
+					<img id='bold' class='editor-options' src='../img/bold.png' alt="save" onclick="styleSelected('bold')">
+					
+					<span class='font-size-select'>
+					<label for='font-size'>Font Size</label>
+					<select id='font-size'>
+						<option value='12' selected="selected">12</option>
+						<option value='14'>14</option>
+						<option value='16'>16</option>
+						<option value='18'>18</option>
+						<option value='20'>20</option>
+						<option value='22'>22</option>
+						<option value='24'>24</option>
+						<option value='26'>26</option>
+						<option value='28'>28</option>
+						<option value='30'>30</option>
+						<option value='32'>32</option>
+						<option value='34'>34</option>
+						<option value='36'>36</option>
+						<option value='38'>38</option>
+						<option value='40'>40</option>
+						<option value='42'>42</option>
+						<option value='44'>44</option>
+					</select>
+					</span>
+
+				</span>
+			</p>
+			<p contentEditable = 'true' id='notepad'>HELLOOOO</p>
+		</div>
+	</div>
+
 
 	
 
