@@ -29,9 +29,12 @@ showStoredLinks();
 function changeSetting(setting)
 {
 	const input = document.getElementById(`${setting}-input`).value;
-	localStorage.setItem(`${setting}`, input);
-	let currentSetting = document.getElementById(`current-${setting}`);
-	currentSetting.textContent = localStorage.getItem(setting);
+	if(input !== "")
+	{
+		localStorage.setItem(`${setting}`, input);
+		let currentSetting = document.getElementById(`current-${setting}`);
+		currentSetting.textContent = localStorage.getItem(setting);
+	}
 }
 
 //gets the link url and link names in users local storage

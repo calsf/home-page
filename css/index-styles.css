@@ -30,10 +30,8 @@
 }
 
 .link-header-container {
-	border: 1px solid black;
-	border-radius: 5px;
-	width: 175px;
-	height: auto;
+	display: flex;
+	justify-content: center;
 }
 
 .link-header {
@@ -48,13 +46,9 @@
 	user-select: none;
 }
 
-#quick-links {
-	max-width: 800px;
-	text-align: center;
-}
-
 .link-container {
-	display: inline-flex;
+	display: flex;
+	justify-content: center;
 }
 
 #link-input-div {
@@ -64,16 +58,63 @@
 .link-inputfield {
 	margin: 5px 3px;
 	font-size: 15px;
-	float: left;
+	width: 90%;
 }
 
 .add-link-button {
 	margin: 3px;
 	border-radius: 5px;
 	cursor: pointer;
-	float: left;
 }
 
 .link {
-	padding: 10px 0;
+	font-size: 18px;
+	padding: 5px 10px;
+}
+
+.notepad-div {
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.editor-options{
+	cursor: pointer;
+	max-width: 20px;
+	height: auto;
+	float: right;
+	padding: 0 3px;
+}
+
+.editor-selected{
+	background-color: grey;
+}
+
+.font-size-select{
+	float: right;
+	padding: 0 4px;
+}
+
+/*all a with parent of div*/
+div > a {
+	text-decoration: none;
+	color: blue;
+}
+
+#notepad {
+	font-size: 12px;
+	width: 500px;
+	height: 450px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
 }

@@ -22,26 +22,28 @@ function addLink() {
 	const linkName = document.getElementById('link-input-name').value;
 	const url = document.getElementById('link-input-url').value;
 	let i = 1;
-
-	do
+	if(linkName !== "" && url !== "")
 	{
-		let data = localStorage.getItem(`link${i}`)
-		if(data === null)
+		do
 		{
-			localStorage.setItem(`link${i}`, url);
-			localStorage.setItem(`link${i}-name`, linkName);
-			let linkEle = document.getElementById(`link${i}`);
-			linkEle.href = url;
-			linkEle.textContent = linkName;
-			linkEle.parentNode.classList.remove('hide');
-			i = 6;
-		}
-		else
-		{
-			i++;
-		}
+			let data = localStorage.getItem(`link${i}`)
+			if(data === null)
+			{
+				localStorage.setItem(`link${i}`, url);
+				localStorage.setItem(`link${i}-name`, linkName);
+				let linkEle = document.getElementById(`link${i}`);
+				linkEle.href = url;
+				linkEle.textContent = linkName;
+				linkEle.parentNode.classList.remove('hide');
+				i = 7;
+			}
+			else
+			{
+				i++;
+			}
 
-	} while(i < 6);
+		} while(i < 7);
+	}
 
 }
 
