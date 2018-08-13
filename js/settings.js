@@ -79,3 +79,9 @@ function removeLink(link)
 	localStorage.removeItem(`${link}-name`);
 	showStoredLinks();
 }
+
+//remove stored notepad data
+function resetNotepad()
+{
+	localStorage.removeItem('notepad');
+}

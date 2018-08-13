@@ -54,8 +54,12 @@ function loadNotepad()
 	let notepad = document.getElementById('notepad');
 	let saved = localStorage.getItem('notepad');
 	console.log(saved);
-	if(saved != "")
+	if(saved !== null && saved !== "")
 	{
 		notepad.innerHTML = saved;
+	}
+	else
+	{
+		notepad.textContent = "Looks like your notepad is empty. Type anything here and save it to view later.";
 	}
 }

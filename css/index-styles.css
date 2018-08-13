@@ -75,7 +75,6 @@
 .notepad-div {
 	display: flex;
 	justify-content: center;
-	text-align: center;
 }
 
 .editor-options{
@@ -102,9 +101,11 @@ div > a {
 }
 
 #notepad {
-	font-size: 12px;
+	font-size: 14px;
+	border: 1px solid grey;
 	width: 500px;
-	height: 450px;
+	height: 400px;
+	overflow-y: auto;
 }
 
 .bold {

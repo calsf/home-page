@@ -69,12 +69,16 @@
 					<img id= 'underline' class='editor-options' src='../img/underline.png' alt="save" onclick="styleSelected('underline')">
 					<img id='italic' class='editor-options' src='../img/italics.png' alt="save" onclick="styleSelected('italic')">
 					<img id='bold' class='editor-options' src='../img/bold.png' alt="save" onclick="styleSelected('bold')">
-					
+
+					<img id='justifyRight' class='editor-options' src='../img/align-right.png' alt="save" onclick="styleSelected('justifyRight')">
+					<img id='justifyCenter' class='editor-options' src='../img/align-center.png' alt="save" onclick="styleSelected('justifyCenter')">
+					<img id='justifyLeft' class='editor-options' src='../img/align-left.png' alt="save" onclick="styleSelected('justifyLeft')">
+
 					<span class='font-size-select'>
 					<label for='font-size'>Font Size</label>
 					<select id='font-size'>
-						<option value='12' selected="selected">12</option>
-						<option value='14'>14</option>
+						<option value='12'>12</option>
+						<option value='14' selected="selected">14</option>
 						<option value='16'>16</option>
 						<option value='18'>18</option>
 						<option value='20'>20</option>
@@ -95,7 +99,7 @@
 
 				</span>
 			</p>
-			<p contentEditable = 'true' id='notepad'>HELLOOOO</p>
+			<p contentEditable='true' id='notepad'></p>
 		</div>
 	</div>
 
