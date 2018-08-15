@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="shortcut icon" type="image/x-icon" href="../img/home.png" />
 	<link rel="stylesheet" type="text/css" href="../css/index-styles.css">
 	<script type="text/javascript" src="../js/key.js"></script>
 	<script type="text/javascript" src="../js/weather.js" async></script>
@@ -11,11 +12,12 @@
 </head>
 <body>
 	<a href='settings.html'><img class="settings-icon" src="../img/cogwheel.png" alt="settings"/></a>
-	
-	<div class="link-header-container">
-		<div class='link-header'>
-			<p>Quick Links <span id="show-link" onclick="showLinkInputs()">+</span></p>
-		</div>
+
+	<div class="link-container">
+		<div class="link-header-container">
+			<div class='link-header'>
+				<p>Quick Links <span id="show-link" onclick="showLinkInputs()"><img id='add-icon' src="../img/add.png" alt="add link"></span></p>
+			</div>
 		<div id='link-input-div' class='hide'>
 			<div>
 				<input id='link-input-name' class='link-inputfield' type='text' placeholder="Name of link"> <input id='link-input-url' class='link-inputfield' type='text' placeholder="URL">
@@ -24,9 +26,8 @@
 				<button class='add-link-button' onclick="addLink()">Add Link</button>
 			</div>
 		</div>
-	</div>
+		</div>
 
-	<div class="link-container">
 			<div class='link hide'>
 				<a id='link1'></a>
 			</div>
@@ -59,47 +60,44 @@
 		<p id="weather"></p>
 	</div>
 
-
-
 	<div class='notepad-div'>
 		<div>
-			<p>NOTEPAD
-				<span>
-					<img class='editor-options' src='../img/save.png' alt="save" onclick="save()">
-					<img id= 'underline' class='editor-options' src='../img/underline.png' alt="save" onclick="styleSelected('underline')">
-					<img id='italic' class='editor-options' src='../img/italics.png' alt="save" onclick="styleSelected('italic')">
-					<img id='bold' class='editor-options' src='../img/bold.png' alt="save" onclick="styleSelected('bold')">
+			<span>
+				<img class='editor-options' src='../img/save.png' alt="save" onclick="save()">
+				<img id= 'underline' class='editor-options' src='../img/underline.png' alt="save" onclick="styleSelected('underline')">
+				<img id='italic' class='editor-options' src='../img/italics.png' alt="save" onclick="styleSelected('italic')">
+				<img id='bold' class='editor-options' src='../img/bold.png' alt="save" onclick="styleSelected('bold')">
 
-					<img id='justifyRight' class='editor-options' src='../img/align-right.png' alt="save" onclick="styleSelected('justifyRight')">
-					<img id='justifyCenter' class='editor-options' src='../img/align-center.png' alt="save" onclick="styleSelected('justifyCenter')">
-					<img id='justifyLeft' class='editor-options' src='../img/align-left.png' alt="save" onclick="styleSelected('justifyLeft')">
+				<img id='justifyRight' class='editor-options' src='../img/align-right.png' alt="save" onclick="styleSelected('justifyRight')">
+				<img id='justifyCenter' class='editor-options' src='../img/align-center.png' alt="save" onclick="styleSelected('justifyCenter')">
+				<img id='justifyLeft' class='editor-options' src='../img/align-left.png' alt="save" onclick="styleSelected('justifyLeft')">
 
-					<span class='font-size-select'>
-					<label for='font-size'>Font Size</label>
-					<select id='font-size'>
-						<option value='12'>12</option>
-						<option value='14' selected="selected">14</option>
-						<option value='16'>16</option>
-						<option value='18'>18</option>
-						<option value='20'>20</option>
-						<option value='22'>22</option>
-						<option value='24'>24</option>
-						<option value='26'>26</option>
-						<option value='28'>28</option>
-						<option value='30'>30</option>
-						<option value='32'>32</option>
-						<option value='34'>34</option>
-						<option value='36'>36</option>
-						<option value='38'>38</option>
-						<option value='40'>40</option>
-						<option value='42'>42</option>
-						<option value='44'>44</option>
-					</select>
-					</span>
-
+				<span class='font-size-select'>
+				<label for='font-size'>Font Size</label>
+				<select id='font-size'>
+					<option value='12'>12</option>
+					<option value='14' selected="selected">14</option>
+					<option value='16'>16</option>
+					<option value='18'>18</option>
+					<option value='20'>20</option>
+					<option value='22'>22</option>
+					<option value='24'>24</option>
+					<option value='26'>26</option>
+					<option value='28'>28</option>
+					<option value='30'>30</option>
+					<option value='32'>32</option>
+					<option value='34'>34</option>
+					<option value='36'>36</option>
+					<option value='38'>38</option>
+					<option value='40'>40</option>
+					<option value='42'>42</option>
+					<option value='44'>44</option>
+				</select>
 				</span>
-			</p>
-			<p contentEditable='true' id='notepad'></p>
+			</span>
+			<div id="notepad-container">
+				<p contentEditable='true' id='notepad'></p>
+			</div>
 		</div>
 	</div>
 

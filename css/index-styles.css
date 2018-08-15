@@ -1,7 +1,27 @@
+body {
+	background-image: url("");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+button {
+	cursor: pointer;
+	color: white;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	padding: 2px 4px;
+}
+
 .settings-icon {
 	max-width: 30px;
 	height: auto;
 	float: right;
+}
+
+#add-icon {
+	max-width: 25px;
+	height: auto;
 }
 
 .hide {
@@ -37,7 +57,7 @@
 .link-header {
 	cursor: default;
 	margin: 0px 10px;
-	font-size: 25px;
+	font-size: 30px;
 	font-weight: bold;
 }
 
@@ -49,6 +69,7 @@
 .link-container {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
 #link-input-div {
@@ -101,11 +122,16 @@ div > a {
 }
 
 #notepad {
+	padding: 5px;
 	font-size: 14px;
 	border: 1px solid grey;
 	width: 500px;
 	height: 400px;
 	overflow-y: auto;
+}
+
+#notepad-container {
+	padding: 10px 0;
 }
 
 .bold {

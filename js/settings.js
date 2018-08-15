@@ -86,6 +86,7 @@ function resetNotepad()
 	localStorage.removeItem('notepad');
 }
 
+//show content when arrow is clicked
 function showContent(content, event)
 {
 	let ele = document.getElementById(content);

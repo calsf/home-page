@@ -3,16 +3,16 @@ getLinks()
 //shows input fields for adding a new link
 function showLinkInputs() {
 	const linkInputs = document.getElementById('link-input-div');
-	let symbol = document.getElementById('show-link');
+	let symbol = document.getElementById('add-icon');
 	if(linkInputs.classList.contains('hide'))
 	{
 		linkInputs.classList.remove('hide');
-		symbol.textContent = "=";
+		symbol.src="../img/hide.png"
 	}
 	else
 	{
 		linkInputs.classList.add('hide');
-		symbol.textContent = "+";
+		symbol.src="../img/add.png"
 	}
 
 }
