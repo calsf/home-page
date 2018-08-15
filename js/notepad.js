@@ -6,30 +6,27 @@ loadNotepad();
 */
 document.getElementById('font-size').addEventListener("change", function(event) {
 	document.execCommand("fontSize", false, "7");
-    let fontElements = document.getElementsByTagName("font");
-    for (let i = 0; i < fontElements.length; ++i) 
-    {
-        if (fontElements[i].size == "7") 
-        {
-            fontElements[i].removeAttribute("size");
-            fontElements[i].style.fontSize = `${event.target.value}px`;
-        }
-    }
+    replaceFontSize(`${event.target.value}px`);
 })
 
 //as a bandaid fix for the issue in the "font-size" listener above, this should resolve the <font size="7"> tags that slip through
 document.getElementById('notepad').addEventListener("input", function(event) {
+    replaceFontSize(`${document.getElementById('font-size').value}px`);
+})
+
+//remove any font tags with size equal to 7
+function replaceFontSize(fontSize)
+{
 	let fontElements = document.getElementsByTagName("font");
-    for (let i = 0; i < fontElements.length; ++i) 
+	for (let i = 0; i < fontElements.length; ++i) 
     {
         if (fontElements[i].size == "7") 
         {
             fontElements[i].removeAttribute("size");
-            fontElements[i].style.fontSize = `${document.getElementById('font-size').value}px`;
+            fontElements[i].style.fontSize = fontSize;
         }
     }
-})
-
+}
 
 function styleSelected(style)
 {
@@ -53,7 +50,6 @@ function loadNotepad()
 {
 	let notepad = document.getElementById('notepad');
 	let saved = localStorage.getItem('notepad');
-	console.log(saved);
 	if(saved !== null && saved !== "")
 	{
 		notepad.innerHTML = saved;

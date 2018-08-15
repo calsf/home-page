@@ -85,3 +85,18 @@ function resetNotepad()
 {
 	localStorage.removeItem('notepad');
 }
+
+function showContent(content, event)
+{
+	let ele = document.getElementById(content);
+	if(ele.classList.contains('hide'))
+	{
+		ele.classList.remove('hide');
+		event.src="../img/arrow-down.png";
+	}
+	else
+	{
+		ele.classList.add('hide');
+		event.src="../img/arrow-right.png";
+	}
+}

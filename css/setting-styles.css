@@ -1,3 +1,23 @@
+body {
+	padding-bottom: 40px;
+}
+
+button {
+	cursor: pointer;
+	color: white;
+	background-color: #337ab7;
+	border-color: #2e6da4;
+	padding: 2px 4px;
+}
+
+input {
+	max-width: 50%;
+}
+
+div > p {
+	font-weight: normal;
+}
+
 .home-icon {
 	max-width: 30px;
 	height: auto;
@@ -6,4 +26,23 @@
 
 .settings {
 	padding: 50px 25% 0 35%;
+}
+
+.setting-box {
+	border: .5px solid lightgrey;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px 2px grey;
+	padding: 15px;
+	max-width: 500px;
+}
+
+.remove {
+	cursor: pointer;
+	max-width: 20px;
+	height: auto;
+	float: right;
+}
+
+.hide {
+	display: none;
 }

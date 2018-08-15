@@ -8,45 +8,74 @@
 <body>
 	<a href='index.html'><img class="home-icon" src="../img/home.png" alt="home"/></a>
 	<div class="settings">
-		<div>
-			<h3>Current Name: <span id="current-name"> </span></h3>
-			<input type='text' id="name-input">
-			<button id="change-name" onclick="changeSetting('name')">Change Name</button>
-		</div>
-		<div>
-			<h3>Current Zip Code: <span id="current-zip"> </span></h3>
-			<input type='text' id="zip-input">
-			<button id="change-zip" onclick="changeSetting('zip')">Change Zip Code</button>
+		
+		<h3>General Information</h3>
+		<div class="setting-box">
+			<h4>Name <span><img onclick="showContent('name-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+			<div id="name-content" class="hide">
+				<p id="current-name"></p>
+				<input type='text' id="name-input">
+				<button id="change-name" onclick="changeSetting('name')">Change Name</button>
+			</div>
+			</h4>
+		<hr>
+			<h4>Zip Code <span><img onclick="showContent('zip-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+			<div id="zip-content" class="hide">
+				<p id="current-zip"></p>
+				<input type='text' id="zip-input">
+				<button id="change-zip" onclick="changeSetting('zip')">Change Zip Code</button>
+			</div>
+			</h4>
 		</div>
 
 		<h3>Quick Links</h3>
-		<div>
-			<h4>Link 1: <span id='link1-name'> </span> <span id='link1'> </span> </h4>
-			<button onclick="removeLink('link1')">Remove</button>
-		</div>
-		<div>
-			<h4>Link 2: <span id='link2-name'> </span> <span id='link2'> </span> </h4>
-			<button onclick="removeLink('link2')">Remove</button>
-		</div>
-		<div>
-			<h4>Link 3: <span id='link3-name'> </span> <span id='link3'> </span> </h4>
-			<button onclick="removeLink('link3')">Remove</button>
-		</div>
-		<div>
-			<h4>Link 4: <span id='link4-name'> </span> <span id='link4'> </span> </h4>
-			<button onclick="removeLink('link4')">Remove</button>
-		</div>
-		<div>
-			<h4>Link 5: <span id='link5-name'> </span> <span id='link5'> </span> </h4>
-			<button onclick="removeLink('link5')">Remove</button>
-		</div>
-		<div>
-			<h4>Link 6: <span id='link6-name'> </span> <span id='link6'> </span> </h4>
-			<button onclick="removeLink('link6')">Remove</button>
+		<div class="setting-box">
+			<h4>Link 1 <span><img onclick="showContent('link1-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id="link1-content" class="hide">
+					<p id='link1-name'></p> <span onclick="removeLink('link1')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
+					<p id='link1'></p> 
+				</div>
+			</h4>
+		<hr>
+			<h4>Link 2 <span><img onclick="showContent('link2-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id="link2-content" class="hide">
+					<p id='link2-name'></p> <span onclick="removeLink('link2')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
+					<p id='link2'></p> 
+				</div>
+			</h4>
+		<hr>
+			<h4>Link 3 <span><img onclick="showContent('link3-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id="link3-content" class="hide">
+					<p id='link3-name'></p> <span onclick="removeLink('link3')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
+					<p id='link3'></p>
+				</div> 
+			</h4>
+		<hr>
+			<h4>Link 4 <span><img onclick="showContent('link4-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id="link4-content" class="hide">
+					<p id='link4-name'></p> <span onclick="removeLink('link4')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
+					<p id='link4'></p> 
+				</div>
+			</h4>
+		<hr>
+			<h4>Link 5 <span><img onclick="showContent('link5-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id="link5-content" class="hide">
+					<p id='link5-name'></p> <span onclick="removeLink('link5')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
+					<p id='link5'></p> 
+				</div>
+			</h4>
+		<hr>
+			<h4>Link 6 <span><img onclick="showContent('link6-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id="link6-content" class="hide">
+					<p id='link6-name'></p> <span onclick="removeLink('link6')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
+					<p id='link6'></p> 
+				</div>
+			</h4>
 		</div>
 
-		<div>
-			<h3>Notepad</h3><button onclick="resetNotepad()">Reset Notepad Content</button>
+		<h3>Notepad</h3>
+		<div class="setting-box">
+			<button onclick="resetNotepad()">Reset Notepad Content</button>
 		</div>
 
 
