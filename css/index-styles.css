@@ -13,6 +13,12 @@ button {
 	padding: 2px 4px;
 }
 
+/*all a with parent of div*/
+div > a {
+	text-decoration: none;
+	color: blue;
+}
+
 .settings-icon {
 	max-width: 30px;
 	height: auto;
@@ -29,7 +35,7 @@ button {
 }
 
 .greeting {
-	padding-top: 40px;
+	padding-top: 5px;
 	text-align: center;
 	font-size: 50px;
 }
@@ -47,6 +53,10 @@ button {
 	border-right: none;
 	border-bottom: 1px solid black;
 	outline: none;
+}
+
+#name-input-div {
+	padding-bottom: 30px;
 }
 
 .link-header-container {
@@ -115,19 +125,16 @@ button {
 	padding: 0 4px;
 }
 
-/*all a with parent of div*/
-div > a {
-	text-decoration: none;
-	color: blue;
-}
-
 #notepad {
 	padding: 5px;
 	font-size: 14px;
 	border: 1px solid grey;
+	border-radius: 2px;
 	width: 500px;
 	height: 400px;
 	overflow-y: auto;
+	outline: none;
+	box-shadow: 1px 1px 2px 1px grey;
 }
 
 #notepad-container {
@@ -144,4 +151,26 @@ div > a {
 
 .underline {
 	text-decoration: underline;
+}
+
+.search-form {
+	display: flex;
+	justify-content: center;
+	padding-top: 40px;
+	max-width: 100%;
+}
+
+#search {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	padding: 5px 10px;
+	height: 30px;
+	width: 500px;
+	box-shadow: 1px 1px 2px 1px grey;
+	transition: box-shadow .2s;
+}
+
+#search:hover, #notepad:hover, #search:focus, #notepad:focus {
+	box-shadow: 1px 2px 6px 1px grey
 }

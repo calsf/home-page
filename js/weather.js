@@ -1,4 +1,5 @@
 const KEY = key;
+showWeather();
 weatherPrompt();
 
 //checks for a zip code, will display message if no zip code, if there is a zip code, it will get weather information
@@ -37,4 +38,14 @@ function getWeather(key)
 function nameCheck() {
 	let name = localStorage.getItem('name');
 	return name === null;
+}
+
+//show or hide weather information based on settings
+function showWeather() {
+	let show = localStorage.getItem('toggle-weather');
+	if(show !== null && show === 'false')
+	{
+		let ele = document.getElementById('weather-container');
+		ele.classList.add('hide');
+	}
 }

@@ -1,3 +1,4 @@
+showNotepad();
 loadNotepad();
 
 /*when no text is highlighted and font size is changed, it encloses new text in a <font size = "7">
@@ -57,5 +58,16 @@ function loadNotepad()
 	else
 	{
 		notepad.textContent = "Looks like your notepad is empty. Type anything here and save it to view later.";
+	}
+}
+
+//show or hide notepad based on settings
+function showNotepad() {
+	let show = localStorage.getItem('toggle-notepad');
+	if(show !== null && show === 'false')
+	{
+		let ele = document.getElementById('full-notepad');
+		ele.classList.remove('notepad-div');
+		ele.classList.add('hide');
 	}
 }

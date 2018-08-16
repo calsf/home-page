@@ -24,6 +24,7 @@ let currentZip= document.getElementById('current-zip');
 name === null ? currentName.textContent = "Not set" : currentName.textContent = name;
 zip === null ? currentZip.textContent = "Not set. Add zip code to get weather information." : currentZip.textContent = zip;
 showStoredLinks();
+setVisibility();
 
 //used for changing name and zip settings
 function changeSetting(setting)
@@ -100,4 +101,48 @@ function showContent(content, event)
 		ele.classList.add('hide');
 		event.src="../img/arrow-right.png";
 	}
+}
+
+//toggle the visibility setting for certain elements by storing into localStorage when checkbox is clicked on
+function toggleVisibility(element, event)
+{
+	const toToggle = document.getElementById(element);
+	localStorage.setItem(element, event.checked);
+}
+
+//set the visibility checkboxes to true or false based on localStorage data
+function setVisibility()
+{
+	let showNotepad = localStorage.getItem('toggle-notepad');
+	showNotepad = convertToBool(showNotepad, 'toggle-notepad');
+
+	let showSearch = localStorage.getItem('toggle-search');
+	showSearch = convertToBool(showSearch, 'toggle-search');
+
+	let showWeather = localStorage.getItem('toggle-weather');
+	showWeather = convertToBool(showWeather, 'toggle-weather');
+
+	document.getElementById('toggle-notepad').checked = showNotepad;
+	document.getElementById('toggle-search').checked = showSearch;
+	document.getElementById('toggle-weather').checked = showWeather;
+}
+
+//convert localStorage value to a boolean value
+function convertToBool(item, storageName)
+{
+	if(item === null )
+	{
+		item = true;
+		localStorage.setItem(storageName, true);
+	}
+	else if (item === 'true') 
+	{
+		item = true;
+		
+	}
+	else
+	{
+		item = false;
+	}
+	return item;
 }

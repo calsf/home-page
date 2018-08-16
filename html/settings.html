@@ -74,8 +74,35 @@
 			</h4>
 		</div>
 
-		<h3>Notepad</h3>
+		<h3>Other</h3>
 		<div class="setting-box">
+			<p>Show Notepad
+				<span>
+				<label class="slider-container">
+	  				<input id="toggle-notepad" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<span class="slider"></span><span class='knob'></span>
+				</label>
+				</span>
+			</p>
+
+			<p>Show Search Bar
+				<span>
+				<label class="slider-container">
+	  				<input id="toggle-search" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<span class="slider"></span><span class='knob'></span>
+				</label>
+				</span>
+			</p>
+
+			<p>Show Weather
+				<span>
+				<label class="slider-container">
+	  				<input id="toggle-weather" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<span class="slider"></span><span class='knob'></span>
+				</label>
+				</span>
+			</p>
+
 			<button onclick="resetNotepad()">Reset Notepad Content</button>
 		</div>
 

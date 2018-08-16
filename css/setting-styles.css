@@ -46,3 +46,52 @@ div > p {
 .hide {
 	display: none;
 }
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 2px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .2s;
+  border-radius: 30px;
+}
+
+.knob {
+  position: absolute;
+  cursor: pointer;
+  height: 16px;
+  width: 16px;
+  left: -1px;
+  background-color: white;
+  transition: .2s;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+
+.checkbox:checked + .slider {
+  background-color: #1a73e8;
+  opacity: .5;
+}
+
+/*select any .knob class after a (.slider class that is after a .checkbox class that is checked)*/
+.checkbox:checked + .slider + .knob {
+  transform: translateX(22px);
+  background-color: #1a73e8;
+  border: none;
+}
+
+.slider-container {
+  position: relative;
+  display: inline-flex;
+  float: right;
+  top: 2px;
+  width: 35px;
+  height: 14px;
+}
+
+.checkbox {
+	display: none;
+}

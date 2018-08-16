@@ -8,6 +8,7 @@
 	<script type="text/javascript" src="../js/greeting.js" async></script>
 	<script type="text/javascript" src="../js/links.js" async></script>
 	<script type="text/javascript" src="../js/notepad.js" async></script>
+	<script type="text/javascript" src="../js/search.js" async></script>
 	<title>Home</title>
 </head>
 <body>
@@ -48,6 +49,12 @@
 			</div>
 	</div>
 
+	<div id='search-bar'>
+		<form class="search-form" action="https://www.google.com/search?q=" method="get">
+		<input type="text" name="q" id="search" placeholder="Search Google">
+		</form>
+	</div>
+
 	<div class="greeting">
 		<p id='greet-text'></p>
 		<div id="name-input-div">
@@ -60,7 +67,7 @@
 		<p id="weather"></p>
 	</div>
 
-	<div class='notepad-div'>
+	<div id='full-notepad' class='notepad-div hide'>
 		<div>
 			<span>
 				<img class='editor-options' src='../img/save.png' alt="save" onclick="save()">
