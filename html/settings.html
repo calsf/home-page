@@ -31,6 +31,17 @@
 
 		<h3>Quick Links</h3>
 		<div class="setting-box">
+			<h4>Add Link <span><img onclick="showContent('link-input-div', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+				<div id='link-input-div' class='hide'>
+				<div>
+					<input id='link-input-name' class='link-inputfield' type='text' placeholder="Name of link"> <input id='link-input-url' class='link-inputfield' type='text' placeholder="URL">
+				</div>
+				<div>
+					<button class='add-link-button' onclick="addLink()">Add Link</button>
+				</div>
+			</div>
+			</h4>
+		<hr>
 			<h4>Link 1 <span><img onclick="showContent('link1-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
 				<div id="link1-content" class="hide">
 					<p id='link1-name'></p> <span onclick="removeLink('link1')"><img class="remove" src="../img/remove.png" alt="remove"/></span> 
@@ -76,32 +87,42 @@
 
 		<h3>Other</h3>
 		<div class="setting-box">
-			<p>Show Notepad
+			<h4>Show Notepad
 				<span>
 				<label class="slider-container">
 	  				<input id="toggle-notepad" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
-			</p>
-
-			<p>Show Search Bar
+			</h4>
+			<hr>
+			<h4>Show Search Bar
 				<span>
 				<label class="slider-container">
 	  				<input id="toggle-search" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
-			</p>
-
-			<p>Show Weather
+			</h4>
+			<hr>
+			<h4>Show Weather
 				<span>
 				<label class="slider-container">
 	  				<input id="toggle-weather" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
-			</p>
+			</h4>
+			<hr>
+			<h4>Show Quick Links
+				<span>
+				<label class="slider-container">
+	  				<input id="toggle-links" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<span class="slider"></span><span class='knob'></span>
+				</label>
+				</span>
+			</h4>
+			<hr>
 
 			<button onclick="resetNotepad()">Reset Notepad Content</button>
 		</div>

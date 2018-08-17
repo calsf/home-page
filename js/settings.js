@@ -122,9 +122,13 @@ function setVisibility()
 	let showWeather = localStorage.getItem('toggle-weather');
 	showWeather = convertToBool(showWeather, 'toggle-weather');
 
+	let showLinks = localStorage.getItem('toggle-links');
+	showLinks = convertToBool(showLinks, 'toggle-links');
+
 	document.getElementById('toggle-notepad').checked = showNotepad;
 	document.getElementById('toggle-search').checked = showSearch;
 	document.getElementById('toggle-weather').checked = showWeather;
+	document.getElementById('toggle-links').checked = showLinks;
 }
 
 //convert localStorage value to a boolean value
@@ -145,4 +149,35 @@ function convertToBool(item, storageName)
 		item = false;
 	}
 	return item;
+}
+
+//looks for empty slot and adds a new link - CONDITION MISSING FOR WHEN ALL SLOTS ARE FULL
+function addLink() {
+	const linkName = document.getElementById('link-input-name');
+	const url = document.getElementById('link-input-url');
+	let i = 1;
+	if(linkName.value !== "" && url !== "")
+	{
+		do
+		{
+			let data = localStorage.getItem(`link${i}`)
+			if(data === null)
+			{
+				localStorage.setItem(`link${i}`, url.value);
+				localStorage.setItem(`link${i}-name`, linkName.value);
+				let linkEle = document.getElementById(`link${i}`);
+				let linkNameEle = document.getElementById(`link${i}-name`);
+				linkEle.textContent = url.value;
+				linkNameEle.textContent = linkName.value;
+				i = 7;
+				linkName.value = ('');
+				url.value = ('');
+			}
+			else
+			{
+				i++;
+			}
+
+		} while(i < 7);
+	}
 }

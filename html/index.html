@@ -14,10 +14,11 @@
 <body>
 	<a href='settings.html'><img class="settings-icon" src="../img/cogwheel.png" alt="settings"/></a>
 
-	<div class="link-container">
+	<div id="quick-links-container" class="link-container">
 		<div class="link-header-container">
 			<div class='link-header'>
-				<p>Quick Links <span id="show-link" onclick="showLinkInputs()"><img id='add-icon' src="../img/add.png" alt="add link"></span></p>
+				<span id='no-links' class='hide'> You currently do not have any quick links set up. </span>
+				<span id="show-link" onclick="showLinkInputs()"><img id='add-icon' src="../img/add.png" alt="add link"></span>
 			</div>
 		<div id='link-input-div' class='hide'>
 			<div>
