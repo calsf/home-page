@@ -35,6 +35,11 @@ function changeSetting(setting)
 		localStorage.setItem(`${setting}`, input);
 		let currentSetting = document.getElementById(`current-${setting}`);
 		currentSetting.textContent = localStorage.getItem(setting);
+		showNotification(`${setting.charAt(0).toUpperCase() + setting.substring(1, setting.length)} has been changed.`);
+	}
+	else
+	{
+		showNotification(`${setting.charAt(0).toUpperCase() + setting.substring(1, setting.length)} is empty. Please enter a ${setting}.`);
 	}
 }
 
@@ -78,6 +83,7 @@ function removeLink(link)
 {
 	localStorage.removeItem(link);
 	localStorage.removeItem(`${link}-name`);
+	showNotification('Link has been removed.');
 	showStoredLinks();
 }
 
@@ -85,6 +91,7 @@ function removeLink(link)
 function resetNotepad()
 {
 	localStorage.removeItem('notepad');
+	showNotification('Notepad content has been reset.');
 }
 
 //show content when arrow is clicked
@@ -151,10 +158,11 @@ function convertToBool(item, storageName)
 	return item;
 }
 
-//looks for empty slot and adds a new link - CONDITION MISSING FOR WHEN ALL SLOTS ARE FULL
+//looks for empty slot and adds a new link
 function addLink() {
 	const linkName = document.getElementById('link-input-name');
 	const url = document.getElementById('link-input-url');
+	let isFull = true;
 	let i = 1;
 	if(linkName.value !== "" && url !== "")
 	{
@@ -163,6 +171,7 @@ function addLink() {
 			let data = localStorage.getItem(`link${i}`)
 			if(data === null)
 			{
+				isFull = false;
 				localStorage.setItem(`link${i}`, url.value);
 				localStorage.setItem(`link${i}-name`, linkName.value);
 				let linkEle = document.getElementById(`link${i}`);
@@ -172,6 +181,7 @@ function addLink() {
 				i = 7;
 				linkName.value = ('');
 				url.value = ('');
+				showNotification('New link has been added.');
 			}
 			else
 			{
@@ -179,5 +189,25 @@ function addLink() {
 			}
 
 		} while(i < 7);
+
+		if(isFull)
+		{
+			showNotification('Unable to add link. All link slots are full, please remove a link before continuing.');
+		}
+	}
+	else
+	{
+		showNotification('Unable to add link. Please enter both a name and URL.');
+	}
+}
+
+//show notification message
+function showNotification(text) {
+	let notif = document.getElementById('notification-msg');
+	notif.textContent = text;
+	if(!notif.classList.contains('fade-anim'))
+	{
+		notif.classList.add('fade-anim');
+		setTimeout(()=> notif.classList.remove('fade-anim'), 5000);
 	}
 }

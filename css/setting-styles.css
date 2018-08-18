@@ -113,3 +113,28 @@ div > p {
   border-radius: 5px;
   cursor: pointer;
 }
+
+#notification {
+  display: flex;
+  justify-content: center;
+}
+
+#notification-msg {
+  position: fixed;
+  color: white;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  padding: 8px 14px;
+  opacity: 0;
+}
+
+.fade-anim {
+  animation: fade 5s linear;
+}
+
+@keyframes fade {
+  0% {opacity: 0}
+  30% {opacity: 1}
+  70% {opacity: 1}
+  100% {opacity: 0}
+}

@@ -1,6 +1,14 @@
 showNotepad();
 loadNotepad();
 
+//warns user before leaving or reloading page if the notepad contents have been changed and unsaved
+window.onbeforeunload = function() {
+	if(document.getElementById('notepad').innerHTML !== localStorage.getItem('notepad'))
+	{
+	  return "There are unsaved changes to notepad.";
+	}
+};
+
 /*when no text is highlighted and font size is changed, it encloses new text in a <font size = "7">
 *when font-size is changed again, this event listener ends up getting the old text enclosed in the <font size = "7"> tag 
 *and changes the text to the new font size despite not being highlighted
@@ -38,12 +46,12 @@ function styleSelected(style)
 	document.execCommand(style);
 }
 
-//save current notepad data
+//save current notepad data and show notification message that it has been saved
 function save()
 {
 	const text = document.getElementById('notepad').innerHTML;
 	localStorage.setItem('notepad', text);
-	alert("Current notepad text saved.");
+	showNotification("Notepad contents have been saved.");
 }
 
 //load any stored notepad data
@@ -69,5 +77,16 @@ function showNotepad() {
 		let ele = document.getElementById('full-notepad');
 		ele.classList.remove('notepad-div');
 		ele.classList.add('hide');
+	}
+}
+
+//show notification message
+function showNotification(text) {
+	let notif = document.getElementById('notification-msg');
+	notif.textContent = text;
+	if(!notif.classList.contains('fade-anim'))
+	{
+		notif.classList.add('fade-anim');
+		setTimeout(()=> notif.classList.remove('fade-anim'), 5000);
 	}
 }
