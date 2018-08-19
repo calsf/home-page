@@ -25,6 +25,7 @@ name === null ? currentName.textContent = "Not set" : currentName.textContent = 
 zip === null ? currentZip.textContent = "Not set. Add zip code to get weather information." : currentZip.textContent = zip;
 showStoredLinks();
 setVisibility();
+addLoseFocus(links, linkNames); //add event listeners to link input fields
 
 //used for changing name and zip settings
 function changeSetting(setting)
@@ -66,13 +67,13 @@ function showStoredLinks()
 	{
 		if(storedLinks[i] === null && storedLinkNames[i] === null)
 		{
-			links[i].textContent = "Not set.";
-			linkNames[i].textContent = "";
+			linkNames[i].textContent = "Empty name.";
+			links[i].textContent = "Empty URL.";
 		}
 		else
 		{
+			linkNames[i].textContent = storedLinkNames[i]
 			links[i].textContent = storedLinks[i];
-			linkNames[i].textContent = storedLinkNames[i];
 		}
 	}
 }
@@ -208,6 +209,48 @@ function showNotification(text) {
 	if(!notif.classList.contains('fade-anim'))
 	{
 		notif.classList.add('fade-anim');
-		setTimeout(()=> notif.classList.remove('fade-anim'), 5000);
+		setTimeout(()=> notif.classList.remove('fade-anim'), 4000);
 	}
+}
+
+
+//add event listener to link edit input fields, when they lose focus, it will set contentEditable to false
+function addLoseFocus(links, linkNames) {
+	for(let i = 0; i < links.length; i++)
+	{
+		links[i].addEventListener("blur", function() {
+			links[i].contentEditable = "false";
+		})
+		linkNames[i].addEventListener("blur", function() {
+			linkNames[i].contentEditable = "false";
+		})
+	}
+}
+
+
+//edit the corresponding input field
+function enableEdit(link)
+{
+	let toEdit = document.getElementById(`${link}`);
+	toEdit.contentEditable = "true";
+	toEdit.focus();
+}
+
+
+//confirms and saves changes to links
+function confirmEdit(link)
+{
+	let url = document.getElementById(`${link}`);
+	let name = document.getElementById(`${link}-name`);
+	if(url.textContent !== "" && name.textContent !== "")
+	{
+		localStorage.setItem(`${link}`, url.textContent);
+		localStorage.setItem(`${link}-name`, name.textContent);
+		showNotification("Changes saved.");
+	}
+	else
+	{
+		showNotification("Unable to confirm changes. Please enter both a name and URL.")
+	}
+
 }

@@ -87,6 +87,6 @@ function showNotification(text) {
 	if(!notif.classList.contains('fade-anim'))
 	{
 		notif.classList.add('fade-anim');
-		setTimeout(()=> notif.classList.remove('fade-anim'), 5000);
+		setTimeout(()=> notif.classList.remove('fade-anim'), 4000);
 	}
 }

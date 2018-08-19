@@ -193,12 +193,12 @@ div > a {
 }
 
 .fade-anim {
-	animation: fade 5s linear;
+	animation: fade 4s linear;
 }
 
 @keyframes fade {
 	0% {opacity: 0}
-	30% {opacity: 1}
-	70% {opacity: 1}
+	5% {opacity: 1}
+	95% {opacity: 1}
 	100% {opacity: 0}
 }
