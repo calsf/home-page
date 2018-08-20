@@ -103,10 +103,6 @@ div > a {
 	padding: 0 3px;
 }
 
-.editor-selected{
-	background-color: grey;
-}
-
 .font-size-select{
 	float: right;
 	padding: 0 4px;

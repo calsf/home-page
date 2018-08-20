@@ -14,6 +14,7 @@ window.onbeforeunload = function() {
 *and changes the text to the new font size despite not being highlighted
 */
 document.getElementById('font-size').addEventListener("change", function(event) {
+	document.getElementById('notepad').focus();
 	document.execCommand("fontSize", false, "7");
     replaceFontSize(`${event.target.value}px`);
 })
@@ -40,9 +41,7 @@ function replaceFontSize(fontSize)
 function styleSelected(style)
 {
 	const text = document.getElementById('notepad')
-	//const ele = document.getElementById(style);
 	text.focus();
-	//ele.classList.contains('editor-selected') ? ele.classList.remove('editor-selected') : ele.classList.add('editor-selected');
 	document.execCommand(style);
 }
 
