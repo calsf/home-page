@@ -85,22 +85,6 @@ div > a {
 	align-items: center;
 }
 
-#link-input-div {
-	padding: 5px;
-}
-
-.link-inputfield {
-	margin: 5px 3px;
-	font-size: 15px;
-	width: 90%;
-}
-
-.add-link-button {
-	margin: 3px;
-	border-radius: 5px;
-	cursor: pointer;
-}
-
 .link {
 	font-size: 18px;
 	padding: 5px 10px;

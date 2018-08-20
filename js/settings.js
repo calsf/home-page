@@ -69,6 +69,9 @@ function showStoredLinks()
 		{
 			linkNames[i].textContent = "Empty name.";
 			links[i].textContent = "Empty URL.";
+			let remove = document.getElementById(`remove-link${i + 1}`);
+			remove.disabled = true;
+			remove.classList.add('disabled');
 		}
 		else
 		{
@@ -179,6 +182,7 @@ function addLink() {
 				let linkNameEle = document.getElementById(`link${i}-name`);
 				linkEle.textContent = url.value;
 				linkNameEle.textContent = linkName.value;
+				enableRemove(`link${i}`);
 				i = 7;
 				linkName.value = ('');
 				url.value = ('');
@@ -220,9 +224,11 @@ function addLoseFocus(links, linkNames) {
 	{
 		links[i].addEventListener("blur", function() {
 			links[i].contentEditable = "false";
+			links[i].classList.remove('text-cursor');
 		})
 		linkNames[i].addEventListener("blur", function() {
 			linkNames[i].contentEditable = "false";
+			linkNames[i].classList.remove('text-cursor');
 		})
 	}
 }
@@ -232,6 +238,7 @@ function addLoseFocus(links, linkNames) {
 function enableEdit(link)
 {
 	let toEdit = document.getElementById(`${link}`);
+	toEdit.classList.add('text-cursor');
 	toEdit.contentEditable = "true";
 	toEdit.focus();
 }
@@ -246,6 +253,7 @@ function confirmEdit(link)
 	{
 		localStorage.setItem(`${link}`, url.textContent);
 		localStorage.setItem(`${link}-name`, name.textContent);
+		enableRemove(`${link}`);
 		showNotification("Changes saved.");
 	}
 	else
@@ -253,4 +261,15 @@ function confirmEdit(link)
 		showNotification("Unable to confirm changes. Please enter both a name and URL.")
 	}
 
+}
+
+//checks for disabled remove button and reenables
+function enableRemove(string)
+{
+	let remove = document.getElementById(`remove-${string}`);
+	if (remove.classList.contains('disabled'))
+	{
+		remove.classList.remove('disabled');
+		remove.disabled = false;
+	}
 }

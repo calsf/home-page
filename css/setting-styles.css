@@ -1,3 +1,7 @@
+h3, h4 {
+  cursor: default;
+}
+
 body {
 	padding-bottom: 40px;
 }
@@ -150,6 +154,14 @@ div > p {
 
 .fade-anim {
   animation: fade 4s linear;
+}
+
+.text-cursor {
+  cursor: text;
+}
+
+.disabled {
+  opacity: .4;
 }
 
 @keyframes fade {
