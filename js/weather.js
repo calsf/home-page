@@ -19,10 +19,11 @@ function getWeather(key)
 	.then(response => response.json())
 	.then(response =>{
 		console.log(response);
-		const temp = document.createTextNode(response.main.temp.toFixed(0));
 		let tempEle = document.getElementById("temp");
 		let weather = document.getElementById("weather");
-		tempEle.prepend(temp);
+		const newEle = document.createElement('span');
+		newEle.innerHTML = `${response.main.temp.toFixed(0)} &#8457`;
+		tempEle.append(newEle);
 		weather.textContent = response.weather[0].main;
 		if(!nameCheck())
 		{

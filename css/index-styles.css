@@ -185,6 +185,12 @@ div > a {
 	animation: fade 4s linear;
 }
 
+#date-container {
+	cursor: default;
+	text-align: center;
+	font-size: 20px;
+}
+
 @keyframes fade {
 	0% {opacity: 0}
 	5% {opacity: 1}
