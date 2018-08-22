@@ -76,7 +76,7 @@ function getLinks() {
 	}
 }
 
-//show or hide notepad based on settings
+//show or hide links based on settings
 function showLinks() {
 	let show = localStorage.getItem('toggle-links');
 	if(show !== null && show === 'false')

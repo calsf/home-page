@@ -45,13 +45,6 @@
 			</div>
 	</div>
 
-	<div id='search-bar'>
-		<form class="search-form" action="https://www.google.com/search?q=" method="get">
-			<input type="text" name="q" id="search" placeholder="Search Google">
-			<span><img type="button" onclick="submitForm()"; class='search-icon' src='../img/search.png' alt='Search'/></span>
-		</form>
-	</div>
-
 	<div class="greeting">
 		<p id='greet-text'></p>
 		<div id="name-input-div">
@@ -63,9 +56,16 @@
 		<span id="date"></span>
 	</div>
 
-	<div id="weather-container">
+	<div id="weather-container" class='center'>
 		<p id="temp" class='hide'></p>
-		<p id="weather"></p>
+		<img id="weather" alt="weather"/>
+	</div>
+
+	<div id='search-bar'>
+		<form class="search-form" action="https://www.google.com/search?q=" method="get">
+			<input type="text" name="q" id="search" placeholder="Search Google">
+			<span><img type="button" onclick="submitForm()"; class='search-icon' src='../img/search.png' alt='Search'/></span>
+		</form>
 	</div>
 
 	<div id='full-notepad' class='notepad-div hide'>

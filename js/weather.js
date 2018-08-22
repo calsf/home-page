@@ -24,7 +24,8 @@ function getWeather(key)
 		const newEle = document.createElement('span');
 		newEle.innerHTML = `${response.main.temp.toFixed(0)} &#8457`;
 		tempEle.append(newEle);
-		weather.textContent = response.weather[0].main;
+		weather.src = `http://openweathermap.org/img/w/${response.weather[0].icon}.png`;
+		weather.title = response.weather[0].description;
 		if(!nameCheck())
 		{
 			tempEle.classList.remove('hide');
@@ -47,6 +48,7 @@ function showWeather() {
 	if(show !== null && show === 'false')
 	{
 		let ele = document.getElementById('weather-container');
+		ele.classList.remove('center');
 		ele.classList.add('hide');
 	}
 }

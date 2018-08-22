@@ -136,10 +136,14 @@ function setVisibility()
 	let showLinks = localStorage.getItem('toggle-links');
 	showLinks = convertToBool(showLinks, 'toggle-links');
 
+	let showDate = localStorage.getItem('toggle-date');
+	showDate = convertToBool(showDate, 'toggle-date');
+
 	document.getElementById('toggle-notepad').checked = showNotepad;
 	document.getElementById('toggle-search').checked = showSearch;
 	document.getElementById('toggle-weather').checked = showWeather;
 	document.getElementById('toggle-links').checked = showLinks;
+	document.getElementById('toggle-date').checked = showDate;
 }
 
 //convert localStorage value to a boolean value
