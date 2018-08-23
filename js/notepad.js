@@ -1,6 +1,21 @@
 showNotepad();
 loadNotepad();
 
+//when focused on notepad, prevent default tab event and indent instead
+document.getElementById('notepad').addEventListener("keydown", function(event){
+	if(event.keyCode === 9)
+	{
+		event.preventDefault();
+		let rangeZero = window.getSelection().getRangeAt(0);
+		const newEle = document.createElement('span');
+		const tab = document.createTextNode('\t');
+  		newEle.appendChild(tab);
+  		newEle.classList.add('white-space');
+		rangeZero.insertNode(newEle);
+		rangeZero.setStartAfter(newEle);
+	}
+})
+
 //warns user before leaving or reloading page if the notepad contents have been changed and unsaved
 window.onbeforeunload = function() {
 	if(document.getElementById('notepad').innerHTML !== localStorage.getItem('notepad'))

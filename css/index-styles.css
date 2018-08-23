@@ -137,6 +137,10 @@ div > a {
 	padding: 10px 0;
 }
 
+.white-space {
+	white-space: pre;
+}
+
 .bold {
 	font-weight: bold;
 }

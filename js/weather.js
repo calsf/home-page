@@ -24,6 +24,7 @@ function getWeather(key)
 		const newEle = document.createElement('span');
 		newEle.innerHTML = `${response.main.temp.toFixed(0)} &#8457`;
 		tempEle.append(newEle);
+		tempEle.title = `High ${response.main.temp_max.toFixed(0)}F/Low ${response.main.temp_min.toFixed(0)}F`;
 		weather.src = `http://openweathermap.org/img/w/${response.weather[0].icon}.png`;
 		weather.title = response.weather[0].description;
 		if(!nameCheck())
