@@ -25,6 +25,7 @@ name === null ? currentName.textContent = "Not set" : currentName.textContent = 
 zip === null ? currentZip.textContent = "Not set. Add zip code to get weather information." : currentZip.textContent = zip;
 showStoredLinks();
 setVisibility();
+setInvert();
 addLoseFocus(links, linkNames); //add event listeners to link input fields
 
 //used for changing name and zip settings
@@ -125,19 +126,19 @@ function toggleVisibility(element, event)
 function setVisibility()
 {
 	let showNotepad = localStorage.getItem('toggle-notepad');
-	showNotepad = convertToBool(showNotepad, 'toggle-notepad');
+	showNotepad = convertToBool(showNotepad, 'toggle-notepad', true);
 
 	let showSearch = localStorage.getItem('toggle-search');
-	showSearch = convertToBool(showSearch, 'toggle-search');
+	showSearch = convertToBool(showSearch, 'toggle-search', true);
 
 	let showWeather = localStorage.getItem('toggle-weather');
-	showWeather = convertToBool(showWeather, 'toggle-weather');
+	showWeather = convertToBool(showWeather, 'toggle-weather', true);
 
 	let showLinks = localStorage.getItem('toggle-links');
-	showLinks = convertToBool(showLinks, 'toggle-links');
+	showLinks = convertToBool(showLinks, 'toggle-links', true);
 
 	let showDate = localStorage.getItem('toggle-date');
-	showDate = convertToBool(showDate, 'toggle-date');
+	showDate = convertToBool(showDate, 'toggle-date', true);
 
 	document.getElementById('toggle-notepad').checked = showNotepad;
 	document.getElementById('toggle-search').checked = showSearch;
@@ -146,13 +147,21 @@ function setVisibility()
 	document.getElementById('toggle-date').checked = showDate;
 }
 
+//set page color checkbox to true or false based on localStorage data;
+function setInvert()
+{
+	let invert = localStorage.getItem('toggle-invert');
+	invert = convertToBool(invert, 'toggle-invert', false);
+	document.getElementById('toggle-invert').checked = invert;
+}
+
 //convert localStorage value to a boolean value
-function convertToBool(item, storageName)
+function convertToBool(item, storageName, defaultVal)
 {
 	if(item === null )
 	{
-		item = true;
-		localStorage.setItem(storageName, true);
+		item = defaultVal;
+		localStorage.setItem(storageName, defaultVal);
 	}
 	else if (item === 'true') 
 	{

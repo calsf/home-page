@@ -1,4 +1,5 @@
 namePrompt();
+invert();
 
 //add eventlistener for when user hits enter key to enter name
 document.getElementById('name-input').addEventListener("keyup", function(event) {
@@ -48,4 +49,27 @@ function enterName()
 function nameCheck() {
 	let name = localStorage.getItem('name');
 	return name === null;
+}
+
+//invert page text and images based on settings
+function invert() {
+	let invert = localStorage.getItem('toggle-invert');
+	if(invert !== null && invert === 'true')
+	{
+		let ele = document.getElementsByTagName('img');
+		let body = document.getElementsByTagName('body');
+		body[0].classList.add('white');
+		for(let i = 0; i < ele.length; i++)
+		{
+			//weather icons are from openweathermap api, easier to see the icons depending on page text colors
+			if(ele[i].id !== 'weather')
+			{
+				ele[i].classList.add('invert');
+			}
+			else
+			{
+				ele[i].classList.remove('invert');
+			}
+		}
+	}
 }

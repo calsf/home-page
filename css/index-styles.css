@@ -1,7 +1,9 @@
 body {
 	background-image: url("");
-	background-size: cover;
+	background-position: center center;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
 }
 
 
@@ -19,6 +21,15 @@ button {
 div > a {
 	text-decoration: none;
 	color: blue;
+}
+
+.invert {
+	-webkit-filter: invert(100%);
+    filter: invert(100%);
+}
+
+.white {
+	color: white;
 }
 
 .settings-icon {
