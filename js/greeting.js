@@ -1,5 +1,6 @@
 namePrompt();
 invert();
+loadBackground();
 
 //add eventlistener for when user hits enter key to enter name
 document.getElementById('name-input').addEventListener("keyup", function(event) {
@@ -61,15 +62,27 @@ function invert() {
 		body[0].classList.add('white');
 		for(let i = 0; i < ele.length; i++)
 		{
-			//weather icons are from openweathermap api, easier to see the icons depending on page text colors
-			if(ele[i].id !== 'weather')
+			//weather icons are from openweathermap api, easier to see the icons depending on page text colors, never invert search icon
+			if(ele[i].id !== 'search-icon')
 			{
-				ele[i].classList.add('invert');
-			}
-			else
-			{
-				ele[i].classList.remove('invert');
+				if(ele[i].id !== 'weather')
+				{
+					ele[i].classList.add('invert');
+				}
+				else
+				{
+					ele[i].classList.remove('invert');
+				}
 			}
 		}
+	}
+}
+
+//load the saved background url
+function loadBackground() {
+	if(localStorage.getItem('background') !== null)
+	{
+		let body = document.getElementsByTagName('body');
+		body[0].style.backgroundImage = `url(${localStorage.getItem('background')})`;
 	}
 }

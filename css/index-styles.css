@@ -6,7 +6,6 @@ body {
 	background-size: cover;
 }
 
-
 button {
 	cursor: pointer;
 	color: white;
@@ -30,6 +29,14 @@ div > a {
 
 .white {
 	color: white;
+}
+
+.white-fill {
+	background-color: white;
+}
+
+.black-fill {
+	background-color: black;
 }
 
 .settings-icon {
@@ -109,8 +116,9 @@ div > a {
 }
 
 .link {
-	font-size: 18px;
+	font-size: 20px;
 	padding: 5px 10px;
+	text-shadow: -1px 0px white, 1px 0px white, 0px -1px white, 0px 1px white;
 }
 
 .notepad-div {
@@ -171,7 +179,7 @@ div > a {
 	max-width: 100%;
 }
 
-.search-icon {
+#search-icon {
 	position: absolute;
 	margin-left: -35px;
 	cursor: pointer;
@@ -206,6 +214,7 @@ div > a {
 
 #notification-msg {
 	position: fixed;
+	margin-top: 25px;
 	color: white;
 	border-radius: 4px;
 	background-color: rgba(0, 0, 0, .5);

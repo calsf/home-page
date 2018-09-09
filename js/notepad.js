@@ -1,5 +1,6 @@
 showNotepad();
 loadNotepad();
+setTransparency();
 
 //when focused on notepad, prevent default tab event and indent instead
 document.getElementById('notepad').addEventListener("keydown", function(event){
@@ -102,5 +103,17 @@ function showNotification(text) {
 	{
 		notif.classList.add('fade-anim');
 		setTimeout(()=> notif.classList.remove('fade-anim'), 4000);
+	}
+}
+
+//set transparency of notepad based on transparency settings and inverted settings
+function setTransparency()
+{
+	const isTransp = localStorage.getItem('toggle-transp');
+	if(isTransp !== null && isTransp === 'false')
+	{
+		const invert = localStorage.getItem('toggle-invert');
+		let notepad = document.getElementById('notepad');
+		invert !== null && invert === 'true'? notepad.classList.add('black-fill') : notepad.classList.add('white-fill');
 	}
 }

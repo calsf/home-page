@@ -26,6 +26,7 @@ zip === null ? currentZip.textContent = "Not set. Add zip code to get weather in
 showStoredLinks();
 setVisibility();
 setInvert();
+setTransp();
 addLoseFocus(links, linkNames); //add event listeners to link input fields
 
 //used for changing name and zip settings
@@ -115,8 +116,8 @@ function showContent(content, event)
 	}
 }
 
-//toggle the visibility setting for certain elements by storing into localStorage when checkbox is clicked on
-function toggleVisibility(element, event)
+//toggle the checkbox setting for certain elements by storing into localStorage when checkbox is clicked on
+function toggleCheckbox(element, event)
 {
 	const toToggle = document.getElementById(element);
 	localStorage.setItem(element, event.checked);
@@ -147,12 +148,20 @@ function setVisibility()
 	document.getElementById('toggle-date').checked = showDate;
 }
 
-//set page color checkbox to true or false based on localStorage data;
+//set page color checkbox to true or false based on localStorage data
 function setInvert()
 {
 	let invert = localStorage.getItem('toggle-invert');
 	invert = convertToBool(invert, 'toggle-invert', false);
 	document.getElementById('toggle-invert').checked = invert;
+}
+
+//set notepad transparency checkbox to true or false based on localStorage data
+function setTransp()
+{
+	let transp = localStorage.getItem('toggle-transp');
+	transp = convertToBool(transp, 'toggle-transp', true);
+	document.getElementById('toggle-transp').checked = transp;
 }
 
 //convert localStorage value to a boolean value
@@ -285,4 +294,19 @@ function enableRemove(string)
 		remove.classList.remove('disabled');
 		remove.disabled = false;
 	}
+}
+
+//set and save background based on input
+function setBackground()
+{
+	const bg = document.getElementById('bg-input').value;
+	localStorage.setItem('background',bg);
+	showNotification("Background has been set.");
+}
+
+//clear the current background
+function clearBackground()
+{
+	localStorage.removeItem('background');
+	showNotification("Background has been cleared.");
 }

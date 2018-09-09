@@ -175,10 +175,18 @@
 
 		<h3>Other</h3>
 		<div class="setting-box">
+			<h4>Background <span><img onclick="showContent('bg-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
+			<div id="bg-content" class="hide pad-top">
+				<input type='text' id="bg-input" placeholder="Enter URL for background">
+				<button id="change-bg" onclick="setBackground()">Set Background</button>
+				<button id='remove-bg' class="remove-button" onclick="clearBackground()">Clear Background</button>
+			</div>
+			</h4>
+			<hr>
 			<h4>Show Notepad
 				<span>
 				<label class="slider-container">
-	  				<input id="toggle-notepad" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<input id="toggle-notepad" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
@@ -187,7 +195,7 @@
 			<h4>Show Search Bar
 				<span>
 				<label class="slider-container">
-	  				<input id="toggle-search" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<input id="toggle-search" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
@@ -196,7 +204,7 @@
 			<h4>Show Weather
 				<span>
 				<label class="slider-container">
-	  				<input id="toggle-weather" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<input id="toggle-weather" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
@@ -205,7 +213,7 @@
 			<h4>Show Date
 				<span>
 				<label class="slider-container">
-	  				<input id="toggle-date" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<input id="toggle-date" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
@@ -214,7 +222,7 @@
 			<h4>Show Quick Links
 				<span>
 				<label class="slider-container">
-	  				<input id="toggle-links" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<input id="toggle-links" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
@@ -223,13 +231,21 @@
 			<h4>Invert Page Colors
 				<span>
 				<label class="slider-container">
-	  				<input id="toggle-invert" onclick="toggleVisibility(this.id, this)" class="checkbox" type="checkbox">
+	  				<input id="toggle-invert" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
 	  				<span class="slider"></span><span class='knob'></span>
 				</label>
 				</span>
 			</h4>
 			<hr>
-
+			<h4>Transparent Notepad Background
+				<span>
+				<label class="slider-container">
+	  				<input id="toggle-transp" onclick="toggleCheckbox(this.id, this)" class="checkbox" type="checkbox">
+	  				<span class="slider"></span><span class='knob'></span>
+				</label>
+				</span>
+			</h4>
+			<hr>
 			<button onclick="resetNotepad()">Reset Notepad Content</button>
 		</div>
 	</div>
