@@ -168,6 +168,13 @@ div > p {
   opacity: .4;
 }
 
+p:empty:not(:focus):before {
+  color: #999;
+  content:attr(default-text) 
+}
+
+
+
 @keyframes fade {
   0% {opacity: 0}
   5% {opacity: 1}

@@ -65,21 +65,24 @@ function showStoredLinks()
 	localStorage.getItem('link5-name'),
 	localStorage.getItem('link6-name')];
 
+	let linkTitles = document.getElementsByClassName('link-title')
+
 	for(let i = 0; i < links.length; i++)
 	{
 		if(storedLinks[i] === null && storedLinkNames[i] === null)
 		{
-			linkNames[i].textContent = "Empty name.";
-			links[i].textContent = "Empty URL.";
 			let remove = document.getElementById(`remove-link${i + 1}`);
 			remove.disabled = true;
 			remove.classList.add('disabled');
+			linkTitles[i].textContent = `Link ${i+1} - Empty`;
 		}
 		else
 		{
-			linkNames[i].textContent = storedLinkNames[i]
-			links[i].textContent = storedLinks[i];
+			linkTitles[i].textContent = `Link ${i+1} - ${localStorage.getItem(`link${i+1}-name`)}`;
+
 		}
+		linkNames[i].textContent = storedLinkNames[i]
+		links[i].textContent = storedLinks[i];
 	}
 }
 
@@ -209,6 +212,7 @@ function addLink() {
 				linkName.value = ('');
 				url.value = ('');
 				showNotification('New link has been added.');
+				showStoredLinks();
 			}
 			else
 			{
@@ -277,6 +281,7 @@ function confirmEdit(link)
 		localStorage.setItem(`${link}-name`, name.textContent);
 		enableRemove(`${link}`);
 		showNotification("Changes saved.");
+		showStoredLinks();
 	}
 	else
 	{

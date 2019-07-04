@@ -104,21 +104,53 @@ div > a {
 	font-size: 20px;
 }
 
+.all-links {
+	padding-top: 5px;
+	display: flex;
+	justify-content: center;
+}
+
 #show-link {
 	cursor: pointer;
 	user-select: none;
 }
 
+.link-header {
+	padding: 0 0 0 15px;
+}
+
 .link-container {
-	display: flex;
+	display: block;
 	justify-content: center;
 	align-items: center;
+	padding-top: 10px;
 }
 
 .link {
 	font-size: 20px;
+	font-family: Verdana;
 	padding: 5px 10px;
 	text-shadow: -1px 0px white, 1px 0px white, 0px -1px white, 0px 1px white;
+	display: inline-block;
+	border: 2px solid black;
+	background-color: white;
+	border-radius: 4px;
+	margin: 0 10px 0 10px;
+	transition: all .4s ease;
+}
+
+.link a:link {
+    color: black;
+}
+
+.link a:visited {
+    color: black;
+}
+
+.link:hover {
+	cursor: pointer;
+	transform: scale(1.05);
+	background-color: white;
 }
 
 .notepad-div {

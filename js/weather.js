@@ -18,7 +18,6 @@ function getWeather(key)
 	fetch(`http://api.openweathermap.org/data/2.5/weather?zip=${zip},us&units=imperial&APPID=${key}`)
 	.then(response => response.json())
 	.then(response =>{
-		console.log(response);
 		let tempEle = document.getElementById("temp");
 		let weather = document.getElementById("weather");
 		const newEle = document.createElement('span');
@@ -32,8 +31,10 @@ function getWeather(key)
 			tempEle.classList.remove('hide');
 		}
 	}).catch(err => {
-		tempEle.classList.add('hide');
-		weather.textContent = 'Something went wrong. Make sure you have set a valid zip code.'
+		console.log(err);
+		let tempEle = document.getElementById("temp");
+		tempEle.textContent = 'Something went wrong. Make sure you have set a valid zip code for weather information.';
+		weather.classList.add('hide');
 	});
 }
 

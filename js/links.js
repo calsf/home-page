@@ -1,5 +1,6 @@
 showLinks();
 getLinks();
+invert();
 
 //shows input fields for adding a new link
 function showLinkInputs() {
@@ -67,7 +68,7 @@ function getLinks() {
 			links[i].href = localStorage.getItem(`link${i+1}`);
 			links[i].textContent = localStorage.getItem(`link${i+1}-name`);
 			links[i].parentNode.classList.remove('hide');
-			hasLink = true;
+			hasLink = true; 
 		}
 	}
 	if(hasLink === false)
@@ -84,5 +85,25 @@ function showLinks() {
 		let ele = document.getElementById('quick-links-container');
 		ele.classList.remove('link-container');
 		ele.classList.add('hide');
+	}
+}
+
+//invert links based on setting
+function invert() {
+	let invert = localStorage.getItem('toggle-invert');
+	let ele = document.getElementsByClassName('link')
+	if(invert !== null && invert === 'true')
+	{
+		for(let i = 0; i < ele.length; i++)
+		{
+			ele[i].classList.add('invert');
+		}
+	}
+	else
+	{
+		for(let i = 0; i < ele.length; i++)
+		{
+			ele[i].classList.remove('invert');
+		}
 	}
 }
