@@ -30,10 +30,8 @@ function showGreeting()
 	input.classList.add('hide');
 	greet.textContent = `Hello ${name}!`;
 	weather.classList.remove('hide');
-	if(zip !== null)
-	{
-		temp.classList.remove('hide');
-	}
+	temp.classList.remove('hide');
+
 }
 
 //enter and store name into local storage
@@ -55,26 +53,71 @@ function nameCheck() {
 //invert page text and images based on settings
 function invert() {
 	let invert = localStorage.getItem('toggle-invert');
+	let greet = document.getElementById('greet-text');
+	let date = document.getElementById('date');
+	let temp = document.getElementById('temp');
+	let link = document.getElementById('quick-links-container');
+	let notepad = document.getElementById('notepad');
+
+	let transp = localStorage.getItem('toggle-transp');
+	
+	//invert accordingly (change text color depending on if transparent notepad bg)
 	if(invert !== null && invert === 'true')
 	{
+		if(transp === 'true')
+		{
+			notepad.classList.add('black');
+		}
+		else
+		{
+			notepad.classList.add('white');
+		}
+		greet.classList.add('black');
+		greet.classList.add('white-outline');
+		date.classList.add('black')
+		date.classList.add('white-outline');
+		temp.classList.add('black')
+		temp.classList.add('white-outline');
+		link.classList.add('black')
+		link.classList.add('white-outline');
+
 		let ele = document.getElementsByTagName('img');
-		let body = document.getElementsByTagName('body');
-		body[0].classList.add('white');
 		for(let i = 0; i < ele.length; i++)
 		{
-			//weather icons are from openweathermap api, easier to see the icons depending on page text colors, never invert search icon
+			//weather icons are from openweathermap api
 			if(ele[i].id !== 'search-icon')
 			{
 				if(ele[i].id !== 'weather')
 				{
-					ele[i].classList.add('invert');
+					ele[i].classList.remove('invert');
 				}
 				else
 				{
-					ele[i].classList.remove('invert');
+					ele[i].classList.add('invert');
 				}
 			}
 		}
+	}
+	else
+	{
+		if(transp === 'true')
+		{
+			notepad.classList.add('white');
+		}
+		else
+		{
+			notepad.classList.add('black');
+
+		}
+		greet.classList.add('white');
+		greet.classList.add('black-outline');
+		date.classList.add('white')
+		date.classList.add('black-outline');
+		temp.classList.add('white')
+		temp.classList.add('black-outline');
+		link.classList.add('white')
+		link.classList.add('black-outline');
+		
 	}
 }
 

@@ -163,7 +163,7 @@ function setInvert()
 function setTransp()
 {
 	let transp = localStorage.getItem('toggle-transp');
-	transp = convertToBool(transp, 'toggle-transp', true);
+	transp = convertToBool(transp, 'toggle-transp', false);
 	document.getElementById('toggle-transp').checked = transp;
 }
 
@@ -235,11 +235,14 @@ function addLink() {
 //show notification message
 function showNotification(text) {
 	let notif = document.getElementById('notification-msg');
+	notif.classList.remove('hide');
 	notif.textContent = text;
 	if(!notif.classList.contains('fade-anim'))
 	{
 		notif.classList.add('fade-anim');
-		setTimeout(()=> notif.classList.remove('fade-anim'), 4000);
+		setTimeout(()=> {
+			notif.classList.remove('fade-anim');
+			notif.classList.add('hide')}, 4000);
 	}
 }
 

@@ -8,7 +8,10 @@ function weatherPrompt()
 	let weather = document.getElementById("weather");
 	let zip = localStorage.getItem('zip');
 	nameCheck() ? weather.classList.add('hide') : null;
-	zip === null ? weather.textContent = 'It seems some settings are missing. Click the cogwheel on your top right to setup.' : getWeather(KEY);
+	
+	let temp = document.getElementById('temp');
+	nameCheck() ? null : temp.classList.remove('hide');
+	zip === null ? temp.textContent = 'No current weather information. Click the cogwheel on your top right to setup.' : getWeather(KEY);
 }
 
 //gets weather information from openweathermap api

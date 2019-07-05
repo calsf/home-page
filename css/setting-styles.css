@@ -148,12 +148,14 @@ div > p {
 }
 
 #notification-msg {
+  cursor: default;
   position: fixed;
   color: white;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .8);
   padding: 8px 14px;
   opacity: 0;
+  z-index: 2;
 }
 
 .fade-anim {

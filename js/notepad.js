@@ -98,11 +98,14 @@ function showNotepad() {
 //show notification message
 function showNotification(text) {
 	let notif = document.getElementById('notification-msg');
+	notif.classList.remove('hide');
 	notif.textContent = text;
 	if(!notif.classList.contains('fade-anim'))
 	{
 		notif.classList.add('fade-anim');
-		setTimeout(()=> notif.classList.remove('fade-anim'), 4000);
+		setTimeout(()=> {
+			notif.classList.remove('fade-anim');
+			notif.classList.add('hide')}, 4000);
 	}
 }
 

@@ -62,6 +62,7 @@ div > a {
 }
 
 #greet-text {
+	font-family: Nobile-Regular;
 	margin: 40px 0;
 }
 
@@ -132,7 +133,7 @@ div > a {
 	padding: 5px 10px;
 	text-shadow: -1px 0px white, 1px 0px white, 0px -1px white, 0px 1px white;
 	display: inline-block;
-	border: 2px solid black;
+	border: 1px solid black;
 	background-color: white;
 	border-radius: 4px;
 	margin: 0 10px 0 10px;
@@ -245,13 +246,15 @@ div > a {
 }
 
 #notification-msg {
+	cursor: default;
 	position: fixed;
 	margin-top: 25px;
 	color: white;
 	border-radius: 4px;
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .8);
 	padding: 8px 14px;
 	opacity: 0;
+	z-index: 2;
 }
 
 .fade-anim {
@@ -263,6 +266,20 @@ div > a {
 	padding: 0 0 15px 0;
 	text-align: center;
 	font-size: 25px;
+	font-family: Arial;
+}
+
+.black-outline {
+	text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;
+}
+
+.white-outline {
+	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+}
+
+@font-face {
+	font-family: Nobile-Regular;
+	src: url(Nobile-Regular.ttf);
 }
 
 @keyframes fade {
