@@ -19,7 +19,7 @@
 			<h4>Name <span><img onclick="showContent('name-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
 			<div id="name-content" class="hide">
 				<p id="current-name"></p>
-				<input type='text' id="name-input">
+				<input type='text' id="name-input" placeholder="Name">
 				<button id="change-name" onclick="changeSetting('name')">Change Name</button>
 			</div>
 			</h4>
@@ -27,7 +27,7 @@
 			<h4>Weather <span><img onclick="showContent('zip-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
 			<div id="zip-content" class="hide">
 				<p id="current-zip"></p>
-				<input type='text' id="zip-input" placeholder="Enter Zip Code">
+				<input type='text' id="zip-input" placeholder="Zip Code">
 				<button id="change-zip" onclick="changeSetting('zip')">Change Zip Code</button>
 			</div>
 			</h4>
@@ -177,7 +177,7 @@
 		<div class="setting-box">
 			<h4>Background <span><img onclick="showContent('bg-content', this)" link class="remove" src="../img/arrow-right.png" alt="show"></span>
 			<div id="bg-content" class="hide pad-top">
-				<input type='text' id="bg-input" placeholder="Enter URL for background">
+				<input type='text' id="bg-input" placeholder="Background URL">
 				<button id="change-bg" onclick="setBackground()">Set Background</button>
 				<button id='remove-bg' class="remove-button" onclick="clearBackground()">Clear Background</button>
 			</div>

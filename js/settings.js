@@ -308,7 +308,7 @@ function enableRemove(string)
 function setBackground()
 {
 	const bg = document.getElementById('bg-input').value;
-	localStorage.setItem('background',bg);
+	localStorage.setItem('background', bg);
 	showNotification("Background has been set.");
 }
 

@@ -58,6 +58,7 @@ function invert() {
 	let temp = document.getElementById('temp');
 	let link = document.getElementById('quick-links-container');
 	let notepad = document.getElementById('notepad');
+	let notepadText = document.getElementById('notepad-bar');
 
 	let transp = localStorage.getItem('toggle-transp');
 	
@@ -72,6 +73,7 @@ function invert() {
 		{
 			notepad.classList.add('white');
 		}
+		notepadText.classList.add('black');
 		greet.classList.add('black');
 		greet.classList.add('white-outline');
 		date.classList.add('black')
@@ -109,6 +111,7 @@ function invert() {
 			notepad.classList.add('black');
 
 		}
+		notepadText.classList.add('white');
 		greet.classList.add('white');
 		greet.classList.add('black-outline');
 		date.classList.add('white')
@@ -117,6 +120,23 @@ function invert() {
 		temp.classList.add('black-outline');
 		link.classList.add('white')
 		link.classList.add('black-outline');
+
+		let ele = document.getElementsByTagName('img');
+		for(let i = 0; i < ele.length; i++)
+		{
+			//weather icons are from openweathermap api
+			if(ele[i].id !== 'search-icon')
+			{
+				if(ele[i].id !== 'weather')
+				{
+					ele[i].classList.add('invert');
+				}
+				else
+				{
+					ele[i].classList.remove('invert');
+				}
+			}
+		}
 		
 	}
 }
